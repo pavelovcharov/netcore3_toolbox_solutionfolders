@@ -6,14 +6,17 @@
     <UseWPF>true</UseWPF>
     <AssemblyName>TestControl</AssemblyName>
     <RootNamespace>TestControl</RootNamespace>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <OutputPath>..\bin</OutputPath>
   </PropertyGroup>
 
   <ItemGroup>
-    <None Update="TestControl.1.0.0.nuspec">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Update="VisualStudioToolsManifest.xml">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    <None Update="tools\VisualStudioToolsManifest.xml">
+      <Pack>true</Pack>
+      <PackagePath>\</PackagePath>
     </None>
   </ItemGroup>
 
